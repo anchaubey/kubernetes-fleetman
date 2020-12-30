@@ -1,0 +1,10 @@
+kubectl delete po webapp-release-0-5 --grace-period=0 --force
+
+ankit@k8s-master:~$ kubectl get po --show-labels
+ankit@k8s-master:~$ kubectl get po --show-labels -l release=0
+kubectl rollout status deployment webapp
+
+ankit@k8s-master:~/kubernetes-fleetman$ kubectl rollout history deployment webapp
+
+ankit@k8s-master:~/kubernetes-fleetman$ kubectl rollout undo deployment --to-revision=1
+
